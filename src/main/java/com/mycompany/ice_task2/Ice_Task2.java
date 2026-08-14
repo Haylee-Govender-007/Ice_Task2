@@ -27,21 +27,42 @@ public class Ice_Task2 {
         
           // Display heading
         System.out.println("ESTATE AGENTS SALES REPORT");
-        System.out.printf("%-20s %15s %15s %15s%n",
-                "", months[0], months[1], months[2]);
-
+        
+         // Display the months
+        System.out.println("\t\t" + months[0] + "\t\t" + months[1] + "\t\t" + months[2]);
+        
         System.out.println("--------------------------------------------------------------");
 
-        // Display sales for each agent
+        // Display the sales
         for (int i = 0; i < agents.length; i++) {
-
-            System.out.printf("%-20s", agents[i]);
-
+            
+            System.out.print(agents[i] + "\t");
+            
             for (int j = 0; j < sales[i].length; j++) {
-                System.out.printf(" R %12.2f", sales[i][j]);
+                System.out.print("R" + sales[i][j] + "\t");
             }
-
-       
+            
+            System.out.println();
+        }
+        System.out.println("--------------------------------------------------------------");
+        
+        // Create an array to store the total sales
+        double[] totalSales = new double[agents.length];
+        
+        // Calculate the total sales for each agent
+        for (int i = 0; i < sales.length; i++) {
+            
+            for (int j = 0; j < sales[i].length; j++) {
+                totalSales[i] = totalSales[i] + sales[i][j];
+            }
+        }
+        
+        // Display the total sales
+        System.out.println("\nTOTAL PROPERTY SALES");
+        
+        for (int i = 0; i < agents.length; i++) {
+            System.out.println(agents[i] + ": R" + totalSales[i]);
+        }
     }
 }
         
