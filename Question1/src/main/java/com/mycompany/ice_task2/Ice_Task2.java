@@ -4,6 +4,8 @@
 
 package com.mycompany.ice_task2;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author emeris
@@ -11,6 +13,9 @@ package com.mycompany.ice_task2;
 public class Ice_Task2 {
 
     public static void main(String[] args) {
+        
+        // Create DecimalFormat object
+        DecimalFormat df = new DecimalFormat("#,###");
         
        
         // Rows = agents
@@ -62,7 +67,7 @@ public class Ice_Task2 {
         // Display the total sales
         
         for (int i = 0; i < agents.length; i++) {
-            System.out.println("Total property sales for " + agents[i] + ": R" + totalSales[i]);
+             System.out.println("Total property sales for " + agents[i] + ": R" + df.format(totalSales[i]));
         }
         
         // Calculate commission
@@ -73,7 +78,7 @@ public class Ice_Task2 {
             
             double commission = totalSales[i] * commissionRate;
             
-            System.out.println("Sales Commmission for " + agents[i] + ": R" + commission);
+            System.out.println("Sales Commission for " + agents[i] + ": R" + df.format(commission));
         }
         
         // Determine the top performing estate agent

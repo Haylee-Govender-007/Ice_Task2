@@ -14,7 +14,7 @@ public class ScentedCandle extends Candle{
     private String scent;
     
     // Create constructor
-    public ScentedCandle(String colour, double height, String scent) {
+    public ScentedCandle(String colour, int height, String scent) {
         super(colour, height);
         this.scent = scent;
     }
@@ -31,11 +31,10 @@ public class ScentedCandle extends Candle{
     
     // Override the setHeight method
     @Override
-    public void setHeight(double height) {
+    public void setHeight(int height) {
         super.setHeight(height);
         
         // Change the price to R3.00 per inch
-        // The price is updated below
     }
     
     // Override the display method
