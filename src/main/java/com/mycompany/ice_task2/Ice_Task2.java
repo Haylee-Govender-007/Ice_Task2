@@ -24,6 +24,22 @@ public class Ice_Task2 {
         
         // Columns = January, February, March
         String[] months = {"JAN", "FEB", "MAR"};
+        
+          // Display heading
+        System.out.println("ESTATE AGENTS SALES REPORT");
+        System.out.printf("%-20s %15s %15s %15s%n",
+                "", months[0], months[1], months[2]);
+
+        System.out.println("--------------------------------------------------------------");
+
+        // Display sales for each agent
+        for (int i = 0; i < agents.length; i++) {
+
+            System.out.printf("%-20s", agents[i]);
+
+            for (int j = 0; j < sales[i].length; j++) {
+                System.out.printf(" R %12.2f", sales[i][j]);
+            }
 
        
     }
