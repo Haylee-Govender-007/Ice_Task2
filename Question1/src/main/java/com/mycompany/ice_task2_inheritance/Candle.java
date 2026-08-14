@@ -15,6 +15,14 @@ public class Candle {
     private double height;
     private double price;
 
+    // Constructor
+    public Candle(String colour, double height) {
+        this.colour = colour;
+        setHeight(height);
+    }
+    
+    
+
     // Getters and Setters
     public String getColour() {
         return colour;
@@ -37,6 +45,11 @@ public class Candle {
         return price;
     }
 
-    
+    // Create a display method
+    public void display() {
+        System.out.println("Colour: " + colour);
+        System.out.println("Height: " + height + " inches");
+        System.out.println("Price: R" + price);
+    }
     
 }
