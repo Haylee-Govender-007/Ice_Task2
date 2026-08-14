@@ -27,6 +27,7 @@ public class Ice_Task2 {
         
           // Display heading
         System.out.println("ESTATE AGENTS SALES REPORT");
+        System.out.println();
         
          // Display the months
         System.out.println("\t\t" + months[0] + "\t\t" + months[1] + "\t\t" + months[2]);
@@ -56,13 +57,38 @@ public class Ice_Task2 {
                 totalSales[i] = totalSales[i] + sales[i][j];
             }
         }
+        System.out.println();
         
         // Display the total sales
-        System.out.println("\nTOTAL PROPERTY SALES");
         
         for (int i = 0; i < agents.length; i++) {
-            System.out.println(agents[i] + ": R" + totalSales[i]);
+            System.out.println("Total property sales for " + agents[i] + ": R" + totalSales[i]);
         }
+        
+        // Calculate commission
+        double commissionRate = 0.02;
+        
+        System.out.println();
+        for (int i = 0; i < agents.length; i++) {
+            
+            double commission = totalSales[i] * commissionRate;
+            
+            System.out.println("Sales Commmission for " + agents[i] + ": R" + commission);
+        }
+        
+        // Determine the top performing estate agent
+        int topAgent = 0;
+        
+        for (int i = 1; i < totalSales.length; i++) {
+            
+            if (totalSales[i] > totalSales[topAgent]) {
+                topAgent = i;
+            }
+        }
+        
+        // Display the top performing estate agent
+        System.out.println("\nTop performing estate agent: " + agents[topAgent]);
+        
     }
 }
         
