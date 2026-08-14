@@ -41,10 +41,16 @@ public class ScentedCandle extends Candle{
     // Override the display method
     @Override
     public void display() {
+       java.text.DecimalFormatSymbols symbols =
+                new java.text.DecimalFormatSymbols(java.util.Locale.GERMANY);
+        
+        java.text.DecimalFormat df =
+                new java.text.DecimalFormat("0.00", symbols);
+        
         System.out.println("Colour: " + getColour());
         System.out.println("Height: " + getHeight() + " inches");
         System.out.println("Scent: " + scent);
-        System.out.println("Price: R" + getHeight() * 3.00);
+        System.out.println("Price: R" + df.format(getPrice()));
     }
     
 }

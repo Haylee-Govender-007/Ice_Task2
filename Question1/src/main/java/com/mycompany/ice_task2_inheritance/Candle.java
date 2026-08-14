@@ -4,6 +4,10 @@
  */
 package com.mycompany.ice_task2_inheritance;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 /**
  *
  * @author emeris
@@ -12,11 +16,11 @@ public class Candle {
     
     // Data fields
     private String colour;
-    private double height;
+    private int height;
     private double price;
 
     // Constructor
-    public Candle(String colour, double height) {
+    public Candle(String colour, int height) {
         this.colour = colour;
         setHeight(height);
     }
@@ -36,7 +40,7 @@ public class Candle {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(int height) {
         this.height = height;
         this.price = height * 2.00; 
     }
@@ -47,9 +51,12 @@ public class Candle {
 
     // Create a display method
     public void display() {
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.GERMANY);
+        DecimalFormat df = new DecimalFormat("0.00", symbols);
+        
         System.out.println("Colour: " + colour);
         System.out.println("Height: " + height + " inches");
-        System.out.println("Price: R" + price);
+        System.out.println("Price: R" + df.format(price));
     }
     
 }
