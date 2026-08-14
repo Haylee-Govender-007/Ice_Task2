@@ -10,7 +10,7 @@ package com.mycompany.ice_task2_inheritance;
  */
 public class ScentedCandle extends Candle{
     
-   // Additional Field --> Scent
+ // Additional Field --> Scent
     private String scent;
     
     // Create constructor
@@ -33,22 +33,18 @@ public class ScentedCandle extends Candle{
     @Override
     public void setHeight(double height) {
         super.setHeight(height);
-        setPrice(height);
+        
+        // Change the price to R3.00 per inch
+        // The price is updated below
     }
     
-    // Create a method to calculate scented candle price
-    public void setPrice(double height) {
-        // Scented candles cost R3.00 per inch
-        super.setHeight(height);
-        // Price is calculated using the height
-    }
-    
-    // Override display
+    // Override the display method
     @Override
     public void display() {
-        super.display();
+        System.out.println("Colour: " + getColour());
+        System.out.println("Height: " + getHeight() + " inches");
         System.out.println("Scent: " + scent);
+        System.out.println("Price: R" + getHeight() * 3.00);
     }
-    
     
 }
